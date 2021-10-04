@@ -12,9 +12,10 @@ var readFile = function (file, encoding) {
 };
 
 // var readFile = smooth(fs.readFile)
-readFile("file1.txt", "utf8")
+readFile("../file1.txt", "utf8")
   .then(function (file1) {
-    return readFile(file1.trim(), "utf8");
+    console.log(file1);
+    return readFile("../" + file1.trim(), "utf8");
   })
   .then(function (file2) {
     console.log(file2);
